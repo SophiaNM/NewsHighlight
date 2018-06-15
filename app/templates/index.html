@@ -1,3 +1,5 @@
+{% import 'macros.html' as macro %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,6 +11,47 @@
         {% endif %}
     </head>
     <body>
-
+        <h3>General News</h3>
+        <!-- {% for general_newsource in general %}
+            <li>{{general_newsource.name}}</li>
+        {% endfor %}
+        {% for business_newsource in business%}
+            <li>{{business_newsource.name}}</li>
+        {% endfor %}
+        {% for technology_newsource in  technology %}
+            <li>{{technology_newsource.name}}</li>
+        {% endfor %}
+        {% for sports_newsource in sports %}
+            <li>{{sports_newsource.name}}</li>
+        {% endfor %}
+        {% for entertainment_newsource in entertainment %}
+            <li>{{entertainment_newsource.name}}</li>
+        {% endfor %}
+        {% for science_newsource in science%}
+            <li>{{science_newsource.name}}</li>
+        {% endfor %} -->
+        <ul>
+            {{macro.displayNewsourceList(general)}}
+        </ul>
+        <h3>Business</h3>
+        <ul>
+            {{macro.displayNewsourceList(business)}}
+        </ul>
+        <h3>Technology</h3>
+        <ul>
+            {{macro.displayNewsourceList(technology)}}
+        </ul>
+        <h3>Sports</h3>
+        <ul>
+            {{macro.displayNewsourceList(sports)}}
+        </ul>
+        <h3>Entertainment</h3>
+        <ul>
+            {{macro.displayNewsourceList(entertainment)}}
+        </ul>
+        <h3>Science</h3>
+        <ul>
+            {{macro.displayNewsourceList(science)}}
+        </ul>
     </body>
 </html>
