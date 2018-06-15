@@ -1,5 +1,12 @@
 {% macro displayNewsourceList(newsource_list)%}
     {% for newsource in newsource_list %}
-        <li>{{newsource.name}}</li>
+        <li>
+            {{newsource.name}}
+            <span>
+                <a href="{{newsource.url}}" target="_blank">see website</a>
+            </span>
+            <p>{{newsource.description|truncate(150)}}</p>
+            <a href="">View Articles</a>
+        </li>
     {% endfor %}
 {% endmacro %}
