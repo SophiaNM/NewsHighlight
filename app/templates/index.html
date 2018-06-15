@@ -1,36 +1,11 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Home | New Highlights </title>
-        {% endif %}
-    </head>
-    <body>
+
+<!-- Content block -->
+{% block content %}
         <h3>General News</h3>
-        <!-- {% for general_newsource in general %}
-            <li>{{general_newsource.name}}</li>
-        {% endfor %}
-        {% for business_newsource in business%}
-            <li>{{business_newsource.name}}</li>
-        {% endfor %}
-        {% for technology_newsource in  technology %}
-            <li>{{technology_newsource.name}}</li>
-        {% endfor %}
-        {% for sports_newsource in sports %}
-            <li>{{sports_newsource.name}}</li>
-        {% endfor %}
-        {% for entertainment_newsource in entertainment %}
-            <li>{{entertainment_newsource.name}}</li>
-        {% endfor %}
-        {% for science_newsource in science%}
-            <li>{{science_newsource.name}}</li>
-        {% endfor %} -->
-        <ul>
+                <ul>
             {{macro.displayNewsourceList(general)}}
         </ul>
         <h3>Business</h3>
@@ -53,5 +28,4 @@
         <ul>
             {{macro.displayNewsourceList(science)}}
         </ul>
-    </body>
-</html>
+{% endblock%}
