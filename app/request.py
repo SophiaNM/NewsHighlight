@@ -15,6 +15,15 @@ base_url = app.config["SOURCE_API_BASE_URL"]
 #Getting the article base url
 article_url = app.config["EVERYTHING_SOURCE_BASE_URL"]
 
+#Getting the topheadline articles
+topheadline_url = app.config["TOP_HEADLINES_BASE_URL"]
+
+#Getting all articles
+everything_url =app.config["EVERYTHING_BASE_URL"]
+
+#Search url
+search_url = app.config["SEARCH_API_BASE_URL"]
+
 def get_newsource(category):
     '''
     Function that gets the json response to our url request
@@ -63,6 +72,7 @@ def process_results(newsource_list):
 
 def get_articles(source_id,limit):
     '''
+    Function that gets the json response to our url request
     '''
     get_articles_url = article_url.format(source_id,limit,api_key)
     print(get_articles_url)
@@ -106,3 +116,57 @@ def process_articles(articles_list):
             articles_results.append(articles_object)
 
     return articles_results
+
+def get_topheadlines(limit):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_topheadlines_url = topheadline_url.format(limit,api_key)
+    print(get_topheadlines_url)
+
+    with urllib.request.urlopen(get_topheadlines_url) as url:
+        get_topheadlines_data = url.read()
+        get_topheadlines_response = json.loads(get_topheadlines_data)
+
+        topheadlines_results = None
+
+        if get_topheadlines_response ['articles']:
+            topheadlines_results_list = get_topheadlines_response['articles']
+            topheadlines_results = process_articles(topheadlines_results_list)
+
+    return topheadlines_results
+
+def get_everything(limit):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_everything_url = everything_url.format(limit,api_key)
+    print(get_everything_url)
+
+    with urllib.request.urlopen(get_everything_url) as url:
+        get_everything_data = url.read()
+        get_everything_response = json.loads(get_everything_data)
+
+        everything_results = None
+
+        if get_everything_response['articles']:
+            everything_results_list = get_everything_response['articles']
+            everything_results = process_articles(everything_results_list)
+
+    return everything_results
+
+
+def search_article(article_name):
+    get_search_url = search_url.format(article_name,api_key)
+
+    with urllib.request.urlopen(get_search_url) as url:
+        search_article_data = url.read()
+        search_article_response = json.loads(search_article_data)
+
+        search_article_results = None
+
+        if search_article_response['articles']:
+            search_article_list = search_article_response['articles']
+            search_article_results = process_articles(search_article_list)
+
+    return search_article_results
