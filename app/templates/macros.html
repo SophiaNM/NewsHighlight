@@ -5,14 +5,24 @@
 
 
             <div class="col-md-4">
-                <p>
-                    {{newsource.name}}
-                    <span>
-                        <a href="{{newsource.url}}" target="_blank">see website</a>
-                    </span>
-                    <p>{{newsource.description|truncate(150)}}</p>
-                    <a href="/articles/{{newsource.id}}&40">View Articles</a>
-                </p>
+                <div class="card sources">
+
+                    <h5>{{newsource.name}}</h5>
+                    <hr class="style1">
+                    <div class="card-body">
+
+                            <span>
+                            <a href="{{newsource.url}}" target="_blank">see website</a>
+                            </span>
+                            <p>{{newsource.description|truncate(150)}}</p>
+                            <a href="/articles/{{newsource.id}}&40">View Articles</a>
+
+                    </div>
+
+                </div>
+
+
+
             </div>
     {% endfor %}
     </div>
