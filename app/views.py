@@ -1,6 +1,6 @@
-from flask import render_template
+from flask import render_template,request,redirect,url_for
 from app import app
-from .request import get_newsource,get_articles
+from .request import get_newsource,get_articles, get_topheadlines, get_everything, search_article
 
 
 # Views
@@ -32,3 +32,42 @@ def articles(source_id,per_page):
 
     title = f'{source_id} | All Articles'
     return render_template('article.html', title=title, name = source_id, articles = article_source)
+
+@app.route('/topheadlines&<int:per_page>')
+def topheadlines(per_page):
+    '''
+    Function that returns top headline articles
+    '''
+
+    topheadlines_news = get_topheadlines(per_page)
+
+    title = 'Top Headlines'
+
+    search_article = request.args.get('article_query')
+    if search_article:
+        return redirect(url_for('search',article_name=search_article))
+    else:
+        return render_template('topheadlines.html', title=title, name = 'Top Headlines', articles = topheadlines_news)
+
+@app.route('/everything&<int:per_page>')
+def all_news(per_page):
+    '''
+    Function used to retirn all news articles
+    '''
+
+    everything_news = get_everything(per_page)
+
+    title = 'All News'
+    return render_template('everything.html', title=title, name = 'All News', articles = everything_news)
+
+@app.route('/search/<article_name>')
+def search(article_name):
+    '''
+    View function to display search results
+    '''
+    article_name_list = article_name.split(" ")
+    article_name_format = "+".join(article_name_list)
+    searched_articles = search_article(article_name_format)
+    title = f'search results for {article_name}'
+
+    return render_template('search.html', articles = searched_articles)
