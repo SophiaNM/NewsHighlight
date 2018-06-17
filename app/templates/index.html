@@ -2,30 +2,66 @@
 {% import 'macros.html' as macro %}
 
 
+
 <!-- Content block -->
 {% block content %}
-        <h3>General News</h3>
+    <div class="container-fluid wrapper">
+        <div class="landing-page">
+
+            <div class="jumbotron">
+                NEWS HIGHLIGHT
+
+            </div>
+        </div>
+
+        <div class="row" id="general">
+            <div class="category col-md-12">
+                <h3>General News</h3>
                 <ul>
-            {{macro.displayNewsourceList(general)}}
-        </ul>
-        <h3>Business</h3>
-        <ul>
-            {{macro.displayNewsourceList(business)}}
-        </ul>
-        <h3>Technology</h3>
-        <ul>
-            {{macro.displayNewsourceList(technology)}}
-        </ul>
-        <h3>Sports</h3>
-        <ul>
-            {{macro.displayNewsourceList(sports)}}
-        </ul>
-        <h3>Entertainment</h3>
-        <ul>
-            {{macro.displayNewsourceList(entertainment)}}
-        </ul>
-        <h3>Science</h3>
-        <ul>
-            {{macro.displayNewsourceList(science)}}
-        </ul>
+                    {{macro.displayNewsourceList(general)}}
+                </ul>
+            </div>
+        </div>
+        <div class="row" id="business">
+            <div class="category col-md-12">
+                <h3>Business</h3>
+                <ul>
+                    {{macro.displayNewsourceList(business)}}
+                </ul>
+            </div>
+        </div>
+        <div class="row" id="technology">
+            <div class="category col-md-12">
+                <h3>Technology</h3>
+                <ul>
+                    {{macro.displayNewsourceList(technology)}}
+                </ul>
+            </div>
+        </div>
+        <div class="row" id="sports">
+            <div class="category col-md-12">                
+                <h3>Sports</h3>
+                <ul>
+                    {{macro.displayNewsourceList(sports)}}
+                </ul>
+            </div>
+        </div>
+        <div class="row" id="entertainment">
+            <div class="category col-md-12">
+                <h3>Entertainment</h3>
+                <ul>
+                    {{macro.displayNewsourceList(entertainment)}}
+                </ul>
+            </div>
+        </div>
+        <div class="row" id="science">
+            <div class="category col-md-12">
+                <h3>Science</h3>
+                <ul>
+                    {{macro.displayNewsourceList(science)}}
+                </ul>
+            </div>
+        </div>
+
+    </div>
 {% endblock%}
