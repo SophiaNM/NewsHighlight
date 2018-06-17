@@ -1,0 +1,48 @@
+/* Navbar Styling */
+nav.opaque-navbar{
+    background-color: #fff;
+    border-bottom: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.03);
+    transition: background-color .5s ease 0s;
+    height: 60px;
+}
+.inline{
+    display: inline;
+}
+
+/* Base Style */
+div.container-fluid.wrapper{
+    margin-top: 80px;
+}
+h3{
+    color: blue;
+}
+hr.style1 {
+    margin:20px 30px;
+    border: 1px;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  }
+div.category{
+    margin-top: 80px;
+}
+.sources{
+    box-shadow: 2px 4px 12px 2px #DCDCDC;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0px;
+    height: 340px;
+    margin-bottom: 20px;
+
+}
+.article{
+    box-shadow: 2px 4px 12px 2px #DCDCDC;
+    padding-bottom: 1rem;
+    border-radius: 0px;
+    height: 620px;
+    width: 85%;
+    margin-bottom: 20px;
+}
