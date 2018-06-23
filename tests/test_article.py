@@ -1,6 +1,7 @@
 import unittest
-from models import article
-Article = article.Article
+from app.models import Article
+# from models import article
+# Article = article.Article
 
 class SourceTest(unittest.TestCase):
     '''
@@ -29,6 +30,3 @@ class SourceTest(unittest.TestCase):
         self.assertEqual(self.new_article.url,"http://www.bbc.co.uk/news/business-44501631")
         self.assertEqual(self.new_article.urlToImage,"https://ichef.bbci.co.uk/news/1024/branded_news/8AC7/production/_102072553_holmes.jpg")
         self.assertEqual(self.new_article.publishedAt,"2018-06-15T22:25:40Z")
-
-if __name__ == '__main__':
-    unittest.main()

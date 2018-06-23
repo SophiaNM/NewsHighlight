@@ -1,28 +1,32 @@
-from app import app
 import urllib.request,json
-from .models import source
-Source = source.Source
-from .models import article
-Article = article.Article
 from datetime import datetime
 
+from .models import Source
+from .models import Article
+
 # Getting api key
-api_key = app.config['NEWS_API_KEY']
-
+api_key = None
 #Getting the movie base url
-base_url = app.config["SOURCE_API_BASE_URL"]
-
+base_url = None
 #Getting the article base url
-article_url = app.config["EVERYTHING_SOURCE_BASE_URL"]
-
+article_url = None
 #Getting the topheadline articles
-topheadline_url = app.config["TOP_HEADLINES_BASE_URL"]
-
+topheadline_url = None
 #Getting all articles
-everything_url =app.config["EVERYTHING_BASE_URL"]
-
+everything_url = None
 #Search url
-search_url = app.config["SEARCH_API_BASE_URL"]
+search_url = None
+
+
+def configure_request(app):
+    global api_key,base_url,article_url,topheadline_url,everything_url,search_url
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config["SOURCE_API_BASE_URL"]
+    article_url = app.config["EVERYTHING_SOURCE_BASE_URL"]
+    topheadline_url = app.config["TOP_HEADLINES_BASE_URL"]
+    everything_url =app.config["EVERYTHING_BASE_URL"]
+    search_url = app.config["SEARCH_API_BASE_URL"]
+
 
 def get_newsource(category):
     '''
@@ -42,6 +46,7 @@ def get_newsource(category):
             newsource_results = process_results(newsource_results_list)
 
     return newsource_results
+
 
 def process_results(newsource_list):
     '''
@@ -66,8 +71,6 @@ def process_results(newsource_list):
         newsource_results.append(newsource_object)
 
     return newsource_results
-
-
 
 
 def get_articles(source_id,limit):
@@ -117,6 +120,7 @@ def process_articles(articles_list):
 
     return articles_results
 
+
 def get_topheadlines(limit):
     '''
     Function that gets the json response to our url request
@@ -135,6 +139,7 @@ def get_topheadlines(limit):
             topheadlines_results = process_articles(topheadlines_results_list)
 
     return topheadlines_results
+
 
 def get_everything(limit):
     '''
