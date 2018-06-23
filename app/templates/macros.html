@@ -2,27 +2,17 @@
 <div class="container-fluid">
     <div class="row">
     {% for newsource in newsource_list %}
-
-
             <div class="col-md-4">
                 <div class="card sources">
-
-                    <h5>{{newsource.name}}</h5>
+                    <a href="{{newsource.url}}" target="_blank">
+                        <h5 class="source_title">{{newsource.name}}</h5>
+                    </a>
                     <hr class="style1">
-                    <div class="card-body">
-
-                            <span>
-                            <a href="{{newsource.url}}" target="_blank">see website</a>
-                            </span>
-                            <p>{{newsource.description|truncate(150)}}</p>
-                            <a href="/articles/{{newsource.id}}&40">View Articles</a>
-
+                    <div class="card-body source_body">
+                        <p>{{newsource.description|truncate(150)}}</p>
+                        <a href="/articles/{{newsource.id}}&40">View Articles</a>
                     </div>
-
                 </div>
-
-
-
             </div>
     {% endfor %}
     </div>
