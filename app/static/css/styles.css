@@ -1,24 +1,99 @@
 /* Navbar Styling */
-nav.opaque-navbar{
+.inline{
+    display: inline;
+}
+.opaque-navbar {
+    background-color: rgba(0,0,0,0.01);
+  /* Transparent = rgba(0,0,0,0) / Translucent = (0,0,0,0.5)  */
+    height: 60px;
+    border-bottom: 0px;
+    transition: background-color .5s ease 0s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.03);
+    transition: background-color .5s ease 0s;
+
+}
+.opaque-navbar.opaque {
     background-color: #fff;
     border-bottom: 0px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.03);
     transition: background-color .5s ease 0s;
-    height: 60px;
+    height: 70px;
 }
-.inline{
-    display: inline;
+.container-fluid.scroll{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+.form-control{
+    padding: 5px;
+    border-radius: 0px
+    font-size: 16px;
+}
+.sub_icon{
+    border: 0px;
+    font-size: 20px;
+    /* padding: 0px; */
+}
+div#navbarNavDropdown.navbar-collapse.order-3.collapse.show{
+    background: white;
+    padding: 10px;
+}
+h2 {
+    font: 400 40px/1.3 'Berkshire Swash', Helvetica, sans-serif;
+    color: #0e2268;
+    text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
 }
 
-/* Base Style */
-div.container-fluid.wrapper{
-    margin-top: 80px;
+/* Landing Page */
+.landing{
+    background-image: url(../assets/5.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:right;
+    background-position: bottom;
+    -webkit-background-size: cover;
+    /* height: 310px; */
+    height: 70%;
+}
+.cover.container-fluid{
+    background-color: rgba(0, 0, 0, 0.67);
+    height: inherit;
+}
+.heading{
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+}
+.title{
+    margin-top: 0 auto;
+    padding-top: 120px;
+    font-size: 45px;
+}
+.title p{
+    border-right: 1px solid #fff;
+    text-align: right;
+    padding-right: 20px;
+
+}
+.pagetitle{
+    margin-top: 0 auto;
+    padding-top: 160px;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 10px;
+}
+h4.wrapper{
+    margin-top: 100px;
+}
+/* Body Style */
+div.container.wrapper{
+    margin-top: 30px;
 }
 h3{
     color: blue;
 }
 hr.style1 {
-    margin:20px 30px;
+    margin:0px 30px;
     border: 1px;
     height: 1px;
     background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
@@ -27,22 +102,123 @@ hr.style1 {
     background: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
   }
 div.category{
-    margin-top: 80px;
+
 }
 .sources{
     box-shadow: 2px 4px 12px 2px #DCDCDC;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-radius: 0px;
-    height: 340px;
+    height: 240px;
     margin-bottom: 20px;
-
 }
-.article{
+h4.source_title{
+    font-family: 'Marcellus SC', serif;
+    font-size: 40px;
+    text-align: center;
+    color: #0e2268;
+    margin-top: 60px;
+    margin-bottom: 30px
+}
+#general h4.source_title{
+    margin-top: 70px;
+}
+h5.source_title{
+    font-family: 'Marcellus SC', serif;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    color: #0e2268;
+    margin-bottom: 10px
+}
+.source_body{
+        font-size: 14px;
+        color: #5d5555;
+}
+a:hover{
+    text-decoration:none;
+    color: #000227;
+}
+
+div.card-body{
+    padding-bottom: 0px;
+}
+
+div.row.text{
+    font-family: Mallanna;
+}
+
+img.card-img-top{
+    border-radius:0px;
+}
+div.card.article{
     box-shadow: 2px 4px 12px 2px #DCDCDC;
     padding-bottom: 1rem;
     border-radius: 0px;
     height: 620px;
-    width: 85%;
+    margin: 0px;
     margin-bottom: 20px;
+    width: 100%;
+}
+.metadata{
+    margin-bottom: 0px;
+    font-size: 14px;
+    color:#6e7271;
+}
+
+
+
+
+
+/* Responsive styling */
+@media only screen and (max-width: 990px) {
+    div.col-sm-6.col-md-4{
+
+        height: 670px;
+        margin-bottom: 30px;
+    }
+    div.card.article{
+        height: inherit;
+    }
+
+}
+@media only screen and (max-width: 986px) {
+    div.col-md-4{
+
+        height: 380px;
+        margin-bottom: 30px;
+    }
+    .sources{
+        height: inherit;
+    }
+}
+
+
+@media only screen and (max-width: 766px) {
+    div.col-md-7 {
+        text-align: center;
+    }
+    div.col-md-5 {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .pagetitle{
+        padding-top: 20px;
+
+    }
+    .title p{
+        border: 0px;
+        border-bottom: 1px solid;
+        text-align: center;
+    }
+    div.col-md-4{
+
+        height: 250px;
+        margin-bottom: 30px;
+    }
+    .sources{
+        height: inherit;
+    }
+
 }
