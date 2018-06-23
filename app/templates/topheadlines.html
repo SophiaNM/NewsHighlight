@@ -5,42 +5,44 @@
 {% endblock %}
 {% block content%}
 
-<div class="container-fluid wrapper">
-
-    <div class="container">
-        <form class="">
-            <input type="text" name="article_query" placeholder="Search for an Article" class = "form-control">
-            <input type="submit" value="Submit" class="btn btn-default">
-        </form>
-
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <h1>{{name}}</h1>
+<!-- Landing Page -->
+<div class="landing">
+    <div class="cover container-fluid">
+        <div class="heading">
+            <div class="row">
+                <div class="col-md-7 title">
+                    <p>BRINGING YOU <br> THE BEST NEWS STORIES</p>
+                </div>
+                <div class="col-md-5 pagetitle">
+                    <p>NEWSHIGHLIGHT <br><strong>TOP HEADLINES TODAY</strong></p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
+</div>
+
+<!-- Body Section -->
+<div class="container wrapper">
+    <div class="row text">
         {% for article in articles%}
-        <div class="col-md-4">
+        <div class="col-sm-6 col-md-4">
             <div class="card article">
                 <a href="{{article.url}}" target="_blank">
                     <img class="card-img-top" src="{{article.urlToImage}}" alt="Image of {{article.title}}">
                 </a>
                 <div class="card-body">
                     <h4 class="card-title">{{article.title}}</h4>
-                    <p>{{article.author}}</p>
-                    <p>{{article.publishedAt}}</p>
+                    <p class="metadata">- {{article.author}}</p>
+                    <p class="metadata">Posted on {{article.publishedAt}}</p>
                     <hr>
-                    <p>{{article.description|truncate(150)}}...
+                    <p>{{article.description}}...
                         <a href="{{article.url}}" target="_blank">View Article on site</a>
                     </p>
                 </div>
             </div>
         </div>
         {% endfor %}
-
     </div>
-
 </div>
 
 {% endblock %}
