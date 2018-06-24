@@ -22,7 +22,7 @@ News Highlights is a web application that will help users list and preview news 
 | Search for an article by keyword | Type any keyword in `search bar` e.g. `Jack Ma`| Redirects to search page with all the search results for Jack Ma|
 
 ## View Live Site here
-View the complete site [here](#)
+View the complete site [here](https://newshighlight-sophia.herokuapp.com/)
 
 
 ## Technologies Used
