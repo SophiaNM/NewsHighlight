@@ -19,7 +19,7 @@ News Highlights is a web application that will help users list and preview news 
 | View Categories of news sources<br>(Technology, entertainment, sports etc)| Click on `Categories` drop down then on specific category e.g. `Technology` | Scrolls down to Technology news sources|
 |View Top Headlines | Click on `Top Headlines` button | Redirects to the Top Headlines article page  |
 | View All Articles | Click on  `All Articles`| Redirects to the All Articles page |
-| Search for an article by keyword | Type any keyword in search bar e.g. `Jack Ma`| Redirects to search page with all the search results for Jack Ma|
+| Search for an article by keyword | Type any keyword in `search bar` e.g. `Jack Ma`| Redirects to search page with all the search results for Jack Ma|
 
 ## View Live Site here
 View the complete site [here](#)
@@ -43,9 +43,6 @@ View the complete site [here](#)
 
 ## Known bugs
 No known bugs so far. If found drop me an email.
-
-## Technologies Used
-Built using Python 3.6
 
 ## Contributors
     - Sophia Murage
